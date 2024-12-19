@@ -1,0 +1,1 @@
+start "Title" /D ".\Bin\Tools\Browser\" "Bin\Tools\Browser\SDKBrowser.exe"

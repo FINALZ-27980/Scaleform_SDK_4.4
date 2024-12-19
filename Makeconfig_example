@@ -1,0 +1,55 @@
+# Makeconfig GFx sample
+#
+
+EPATH := $(PATH)
+
+# Linux
+ifeq ($(P1),local)
+PCFLAGS += -march=pentiumpro
+endif
+
+# MacOS
+ifeq ($(P1),MacOS)
+# change the following line, to target OSX versions lower than the current SDK using to build.
+MACOS_VER=10.7
+endif
+
+#WiiU
+ifeq ($(P1), WiiU)
+CAFE_ROOT := /cygdrive/c/path/to/CAFE_SDK
+CAFE_HARDWARE := 
+GHS_ROOT := /cygdrive/c/path/to/GHS_ROOT
+CAFE_GHS_VERSION=""
+endif
+
+# Android
+ifeq ($(P1),Android)
+#
+# Windows/Cygwin:
+#    It's best not to use paths with spaces or symbols in them e.g. C:\Program Files (x86).
+#    Installing somewhere in the root directory of the C drive works best e.g. C:\Android.
+#
+# A version of JDK 6 is required (Google doesn't recommend using JDK 7)
+export JAVA_HOME := /cygdrive/c/Android/JDK
+# Apache Ant is required for building with the Android framework
+export ANT_HOME := /cygdrive/c/Android/ANT
+# Path to the root of the Android SDK directory
+ANDROID_SDK := /cygdrive/c/Android/SDK
+# Path to the root of the Android NDK directory
+ANDROID_NDK := /cygdrive/c/Android/NDK
+####################
+# Advanced Options #
+####################
+# Android SDK Target API level (latest installed if left blank)
+ANDROID_SDK_API=
+# Android NDK Target API level (default/minimum is '9' for EGL support)
+ANDROID_NDK_API=
+# Android Architecture ABI (current options are 'arm' and 'x86, default is 'arm' if left blank)
+ANDROID_ARCH_ABI=
+# Set to '1 ' to enable NEON support for ARM ABI (default is '0' or disabled for widest compatibility)
+NEON=0
+# Set to '1' to enable launching after build
+AUTODEPLOY := 0
+# Leave this line as is
+export PATH := $(EPATH):$(JAVA_HOME)/bin:$(ANT_HOME)/bin:$(ANDROID_SDK)/tools:$(ANDROID_SDK)/platform-tools
+endif
