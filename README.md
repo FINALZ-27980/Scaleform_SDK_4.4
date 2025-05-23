@@ -8,3 +8,5 @@ https://web.archive.org/web/20150911141222/http://gameware.autodesk.com/download
 
 # This Is Autodesk Scaleform SDK Collection (4.5, 4.6 Or Above Not Exist) Download Link:
 In China Link: https://pan.baidu.com/s/1wGRztCXMkN-Z48jqg40nLw?pwd=tp5b Pass: tp5b 
+
+In World Link: https://drive.google.com/file/d/1_1P1hTMt2IFjmcJvbFu2_jDXNLP8rXCi/view?usp=sharing
